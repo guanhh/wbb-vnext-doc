@@ -18,7 +18,7 @@
     
     
       
-        <title>运行模块 - WBBvNext Docs</title>
+        <title>模块 - WBBvNext Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#runmodule" class="md-skip">
+        <a href="#module" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              运行模块
+              模块
             
           </span>
         </div>
@@ -252,12 +252,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../RunModule/" class="md-tabs__link">
       运行模块
     </a>
   </li>
@@ -278,13 +276,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Module/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         进阶
       </a>
     </li>
@@ -406,58 +406,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          运行模块
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../RunModule/" class="md-nav__link">
         运行模块
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模块加载
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    运行
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -483,12 +436,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
         进阶
@@ -504,11 +459,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Module/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         模块
       </a>
+      
     </li>
   
 
@@ -574,28 +539,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模块加载
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    运行
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -607,15 +550,40 @@
               
                 
                 
-                <h1 id="runmodule">RunModule</h1>
+                <h1 id="module">Module</h1>
 <blockquote>
-<p>运行创建的模块</p>
+<p><code>WBBvNext</code> 模块结构介绍</p>
 </blockquote>
-<h3 id="_1">模块加载</h3>
-<p><img alt="feedback_dll" src="/images/feedback_all_dll.PNG" /></p>
-<h3 id="_2">运行</h3>
-<p><img alt="feedback_index" src="/images/feedback_index_ui.PNG" /></p>
-<p><img alt="feedback_edit" src="/images/feedback_edit_ui.PNG" /></p>
+<p>以 <code>School</code> 模块为例</p>
+<p><img alt="插件配置" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/school_module_pro.PNG" /></p>
+<ul>
+<li><code>WBBvNext.School.Abstrat</code></li>
+</ul>
+<p>服务接口定义层</p>
+<ul>
+<li><code>WBBvNext.School.DataAccess</code></li>
+</ul>
+<p>数据库上下文</p>
+<ul>
+<li><code>WBBvNext.School.Extension</code></li>
+</ul>
+<p>服务实现，模块基础信息实现，静态文件实现。根据模块需要进行不同实现。</p>
+<ul>
+<li><code>WBBvNext.School.Model</code></li>
+</ul>
+<p>模型层</p>
+<ul>
+<li><code>WBBvNext.School.Page</code></li>
+</ul>
+<p>包含Razor页面和控制器（自动生成）</p>
+<ul>
+<li><code>WBBvNext.School.Test</code></li>
+</ul>
+<p>测试（自动生成）</p>
+<ul>
+<li><code>WBBvNext.School.ViewModel</code></li>
+</ul>
+<p>视图模型层（自动生成）</p>
                 
               
               
@@ -640,7 +608,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../EditModule/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 编辑模块" rel="prev">
+        <a href="../Localization/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 本地化" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -649,20 +617,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              编辑模块
+              本地化
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Localization/" class="md-footer__link md-footer__link--next" aria-label="下一页: 本地化" rel="next">
+        <a href="../Service/" class="md-footer__link md-footer__link--next" aria-label="下一页: 服务" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              本地化
+              服务
             </div>
           </div>
           <div class="md-footer__button md-icon">

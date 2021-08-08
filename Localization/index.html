@@ -18,7 +18,7 @@
     
     
       
-        <title>模块 - WBBvNext Docs</title>
+        <title>本地化 - WBBvNext Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module" class="md-skip">
+        <a href="#localization" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              模块
+              本地化
             
           </span>
         </div>
@@ -264,10 +264,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../Localization/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       本地化
     </a>
   </li>
@@ -276,15 +278,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../Module/" class="md-tabs__link">
         进阶
       </a>
     </li>
@@ -421,11 +421,51 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Localization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          本地化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         本地化
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    编译模块
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -436,14 +476,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       <label class="md-nav__link" for="__nav_7">
         进阶
@@ -459,21 +497,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Module/" class="md-nav__link">
         模块
       </a>
-      
     </li>
   
 
@@ -539,6 +567,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    编译模块
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -550,40 +593,46 @@
               
                 
                 
-                <h1 id="module">Module</h1>
+                <h1 id="localization">Localization</h1>
 <blockquote>
-<p><code>WBBvNext</code> 模块结构介绍</p>
+<p><code>Feedback</code> 模块本地化配置</p>
 </blockquote>
-<p>以 <code>School</code> 模块为例</p>
-<p><img alt="插件配置" src="/images/school_module_pro.PNG" /></p>
-<ul>
-<li><code>WBBvNext.School.Abstrat</code></li>
-</ul>
-<p>服务接口定义层</p>
-<ul>
-<li><code>WBBvNext.School.DataAccess</code></li>
-</ul>
-<p>数据库上下文</p>
-<ul>
-<li><code>WBBvNext.School.Extension</code></li>
-</ul>
-<p>服务实现，模块基础信息实现，静态文件实现。根据模块需要进行不同实现。</p>
-<ul>
-<li><code>WBBvNext.School.Model</code></li>
-</ul>
-<p>模型层</p>
-<ul>
-<li><code>WBBvNext.School.Page</code></li>
-</ul>
-<p>包含Razor页面和控制器（自动生成）</p>
-<ul>
-<li><code>WBBvNext.School.Test</code></li>
-</ul>
-<p>测试（自动生成）</p>
-<ul>
-<li><code>WBBvNext.School.ViewModel</code></li>
-</ul>
-<p>视图模型层（自动生成）</p>
+<p>在 <code>Page</code> 层的 <code>Locales</code> 目录下编辑 <code>zh.json</code> he和 <code>en.json</code></p>
+<p>zh.json</p>
+<pre><code class="language-json">{
+  &quot;WBBvNext.Shared.Program&quot;: {
+    &quot;_Feedback&quot;: &quot;反馈&quot;,
+    &quot;MenuKey.Suggestion&quot;: &quot;反馈中心&quot;,
+    &quot;Suggestion.Title&quot;: &quot;标题&quot;,
+    &quot;Suggestion.Detail&quot;: &quot;详情&quot;,
+    &quot;Suggestion.QuestionType&quot;: &quot;问题类型&quot;,
+    &quot;Suggestion.UserName&quot;: &quot;用户名&quot;,
+    &quot;Suggestion.Email&quot;: &quot;邮箱&quot;,
+    &quot;Suggestion.IsSolved&quot;: &quot;解决&quot;,
+    &quot;Suggestion.Remark&quot;: &quot;备注&quot;
+  }
+}
+</code></pre>
+<p>en.json</p>
+<pre><code class="language-json">{
+  &quot;WBBvNext.Shared.Program&quot;: {
+    &quot;_Feedback&quot;: &quot;Suggestion&quot;,
+    &quot;MenuKey.Suggestion&quot;: &quot;Suggestion Manager&quot;,
+    &quot;Suggestion.Title&quot;: &quot;Title&quot;,
+    &quot;Suggestion.Detail&quot;: &quot;Detail&quot;,
+    &quot;Suggestion.QuestionType&quot;: &quot;QuestionType&quot;,
+    &quot;Suggestion.UserName&quot;: &quot;UserName&quot;,
+    &quot;Suggestion.Email&quot;: &quot;Email&quot;,
+    &quot;Suggestion.IsSolved&quot;: &quot;IsSolved&quot;,
+    &quot;Suggestion.Remark&quot;: &quot;Remark&quot;
+  }
+}
+</code></pre>
+<h3 id="_1">编译模块</h3>
+<p>重新编译模块后，运行</p>
+<p><img alt="feedback_localization" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/feedback_localization.PNG" /></p>
+<p><img alt="feedback_index" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/feedback_localization_index.PNG" /></p>
+<p><img alt="feedback_new" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/feedback_localization_new.PNG" /></p>
                 
               
               
@@ -608,7 +657,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Localization/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 本地化" rel="prev">
+        <a href="../RunModule/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 运行模块" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -617,20 +666,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              本地化
+              运行模块
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Service/" class="md-footer__link md-footer__link--next" aria-label="下一页: 服务" rel="next">
+        <a href="../Module/" class="md-footer__link md-footer__link--next" aria-label="下一页: 模块" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              服务
+              模块
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -18,7 +18,7 @@
     
     
       
-        <title>创建模块 - WBBvNext Docs</title>
+        <title>运行项目 - WBBvNext Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#createmodule" class="md-skip">
+        <a href="#runproject" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              创建模块
+              运行项目
             
           </span>
         </div>
@@ -216,10 +216,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../RunProject/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       运行项目
     </a>
   </li>
@@ -228,12 +230,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../CreateModule/" class="md-tabs__link">
       创建模块
     </a>
   </li>
@@ -361,21 +361,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../RunProject/" class="md-nav__link">
-        运行项目
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -388,12 +373,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          创建模块
+          运行项目
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        创建模块
+        运行项目
       </a>
       
         
@@ -411,8 +396,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#feedback" class="md-nav__link">
-    至此，一个 Feedback 模块的基本结构已经创建完成
+  <a href="#_1" class="md-nav__link">
+    开发环境准备
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbbvnext" class="md-nav__link">
+    下载 WBBvNext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    编译模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模块加载位置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    包含静态资源的模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    配置连接字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbbvnext_1" class="md-nav__link">
+    运行 WBBvNext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    至此，项目启动已经完成
   </a>
   
 </li>
@@ -421,6 +455,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CreateModule/" class="md-nav__link">
+        创建模块
+      </a>
     </li>
   
 
@@ -574,8 +623,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#feedback" class="md-nav__link">
-    至此，一个 Feedback 模块的基本结构已经创建完成
+  <a href="#_1" class="md-nav__link">
+    开发环境准备
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbbvnext" class="md-nav__link">
+    下载 WBBvNext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    编译模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模块加载位置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    包含静态资源的模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    配置连接字符串
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbbvnext_1" class="md-nav__link">
+    运行 WBBvNext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    至此，项目启动已经完成
   </a>
   
 </li>
@@ -593,36 +691,49 @@
               
                 
                 
-                <h1 id="createmodule">CreateModule</h1>
+                <h1 id="runproject">RunProject</h1>
+<h3 id="_1">开发环境准备</h3>
 <ol>
-<li>编译 <code>WBB</code> 模块，置于 <code>WBBPlugs</code> 目录下</li>
+<li><code>.NET5</code></li>
+<li><code>Visual Studio 2019</code></li>
+<li><code>SQL Server 2014</code> 及以上版本</li>
 </ol>
-<p><img alt="插件目录" src="/images/wbb_dll.PNG" /></p>
-<ol>
-<li>
-<p>设置 <code>WBBvNext</code> 为启用项，运行项目</p>
-</li>
-<li>
-<p>配置插件参数，生成插件结构</p>
-</li>
-</ol>
-<p><img alt="插件配置" src="/images/wbb_module.PNG" /></p>
+<h3 id="wbbvnext">下载 <code>WBBvNext</code></h3>
+<p>通过 git 下载</p>
+<pre><code>git clone https://gitee.com/guan2h/WBB-vNext.git
+</code></pre>
+<p>直接下面地址下载</p>
+<p><a href="https://gitee.com/guan2h/WBB-vNext">https://gitee.com/guan2h/WBB-vNext</a></p>
+<h3 id="_2">编译模块</h3>
+<p><code>WBBvNext</code> 自带了以下模块</p>
 <ul>
-<li>插件名称：模块简称，后面数据库连接配置参数与之对应</li>
-<li>包含数据库：勾选 <code>包含数据库</code> 表示改模块包含数据库操作，会自动生成数据库相关库</li>
-<li>
-<p>项目路径：自动填充，不需要改动。指的是代码生成路径</p>
-</li>
-<li>
-<p>生成 <code>Feedback</code> 模块代码</p>
-</li>
+<li><code>Doc</code> 模块；（说明文档）</li>
+<li><code>Feedback</code> 模块；（反馈中心）</li>
+<li><code>PDF</code> 模块；（集成 <code>pdf.js</code> 功能）</li>
+<li><code>School</code> 模块；（样例模块，演示 <code>WBBvNext</code> 功能）</li>
+<li><code>WBB</code> 模块；（模块开发代码生成）</li>
 </ul>
-<p><img alt="插件配置" src="/images/wbb_gencode.PNG" /></p>
-<ol>
-<li>将 <code>Feedback</code> 模块代码添加到 <code>WBBvNext</code> 中</li>
-</ol>
-<p><img alt="插件配置" src="/images/add_gen_module.PNG" /></p>
-<h3 id="feedback">至此，一个 <code>Feedback</code> 模块的基本结构已经创建完成</h3>
+<p><img alt="模块" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/wbb_modules.PNG" /></p>
+<h3 id="_3">模块加载位置</h3>
+<p><code>WBBvNext</code> 默认从可执行程序所在路径的 <code>WBBPlugs</code> 目录下加载模块 dll</p>
+<p>将编译好的模块，安装模块名称新建文件夹，并将 dll 放置在对应模块文件夹下</p>
+<p>如下：</p>
+<p><img alt="模块路径" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/wbb_module_path.PNG" /></p>
+<p>例如 <code>School</code> 模块文件夹内容：</p>
+<p><img alt="School模块" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/school_all_dll.PNG" /></p>
+<blockquote>
+<p>注意：模块引用的一些外部库，需要一起放置在模块目录下</p>
+</blockquote>
+<h3 id="_4">包含静态资源的模块</h3>
+<p><code>PDF</code> 模块包含 <code>pdf.js</code> 相关静态资源，需要将资源放置在模块目录下。</p>
+<p><img alt="PDF模块" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/pdf_all_dll.PNG" /></p>
+<p><code>Doc</code> 模块包含了图片和 md 文档。</p>
+<p><img alt="Doc模块" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/doc_all_dll.PNG" /></p>
+<h3 id="_5">配置连接字符串</h3>
+<p>在 <code>appsetting.json</code> 文件中，配置相关数据库模块连接字符串</p>
+<h3 id="wbbvnext_1">运行 WBBvNext</h3>
+<p>设置 <code>WBBvNext</code> 为启动项，运行</p>
+<h3 id="_6">至此，项目启动已经完成</h3>
                 
               
               
@@ -647,7 +758,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../RunProject/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 运行项目" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一页: 首页" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -656,20 +767,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              运行项目
+              首页
             </div>
           </div>
         </a>
       
       
         
-        <a href="../EditModule/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编辑模块" rel="next">
+        <a href="../CreateModule/" class="md-footer__link md-footer__link--next" aria-label="下一页: 创建模块" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              编辑模块
+              创建模块
             </div>
           </div>
           <div class="md-footer__button md-icon">

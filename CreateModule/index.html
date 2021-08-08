@@ -18,7 +18,7 @@
     
     
       
-        <title>编辑模块 - WBBvNext Docs</title>
+        <title>创建模块 - WBBvNext Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#editmodule" class="md-skip">
+        <a href="#createmodule" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              编辑模块
+              创建模块
             
           </span>
         </div>
@@ -228,10 +228,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../CreateModule/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       创建模块
     </a>
   </li>
@@ -240,12 +242,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../EditModule/" class="md-tabs__link">
       编辑模块
     </a>
   </li>
@@ -376,21 +376,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../CreateModule/" class="md-nav__link">
-        创建模块
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -403,12 +388,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          编辑模块
+          创建模块
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        编辑模块
+        创建模块
       </a>
       
         
@@ -426,43 +411,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#model" class="md-nav__link">
-    创建 model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataaccess" class="md-nav__link">
-    DataAccess 层配置数据库上下文
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    配置数据库连接
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    编译
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    代码生成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    定义模块信息
+  <a href="#feedback" class="md-nav__link">
+    至此，一个 Feedback 模块的基本结构已经创建完成
   </a>
   
 </li>
@@ -471,6 +421,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EditModule/" class="md-nav__link">
+        编辑模块
+      </a>
     </li>
   
 
@@ -609,43 +574,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#model" class="md-nav__link">
-    创建 model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataaccess" class="md-nav__link">
-    DataAccess 层配置数据库上下文
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    配置数据库连接
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    编译
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    代码生成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    定义模块信息
+  <a href="#feedback" class="md-nav__link">
+    至此，一个 Feedback 模块的基本结构已经创建完成
   </a>
   
 </li>
@@ -663,83 +593,36 @@
               
                 
                 
-                <h1 id="editmodule">EditModule</h1>
-<blockquote>
-<p>借助 <code>WTM</code> 框架的自动生成功能，自动生成 Model 的 CRUD 操作及交互 UI</p>
-</blockquote>
-<h3 id="model">创建 model</h3>
-<p>本样例模块演示的是创建一个反馈信息收集功能，所以创建以下对象，用来保持反馈信息</p>
-<pre><code class="language-csharp">
-[Table(&quot;Suggestions&quot;)]
-public class Suggestion : BasePoco
-{
-    [Required]
-    [DisplayName(&quot;Suggestion.Title&quot;)]
-    [StringLength(20)]
-    public string Title { get; set; }
-
-    [DisplayName(&quot;Suggestion.Detail&quot;)]
-    [StringLength(200)]
-    public string Detail { get; set; }
-
-    [DisplayName(&quot;Suggestion.QuestionType&quot;)]
-    public QuestionTypeEnum QuestionType { get; set; }
-
-    [DisplayName(&quot;Suggestion.UserName&quot;)]
-    [StringLength(20)]
-    public string UserName { get; set; }
-
-    [DisplayName(&quot;Suggestion.Email&quot;)]
-    [StringLength(50)]
-    public string Email { get; set; }
-
-    [DisplayName(&quot;Suggestion.IsSolved&quot;)]
-    public bool  IsSolved { get; set; }
-
-    [DisplayName(&quot;Suggestion.Remark&quot;)]
-    [StringLength(200)]
-    public string Remark { get; set; }
-}
-
-public enum QuestionTypeEnum
-{
-    Bug,
-    Suggestion,
-    Other
-}
-</code></pre>
-<p>关于 <code>Model</code> 创建的更多内容，请参考 <code>WTM</code> 中关于模型层的介绍
-<a href="https://wtmdoc.walkingtec.cn/#/Model/Poco">https://wtmdoc.walkingtec.cn/#/Model/Poco</a></p>
-<h3 id="dataaccess"><code>DataAccess</code> 层配置数据库上下文</h3>
-<p>因为只创建了一个 <code>Suggestion</code> 对象，所以增加如下</p>
-<pre><code class="language-csharp">public DbSet&lt;Suggestion&gt; Suggestions { get; set; }
-</code></pre>
-<p><img alt="feedback_context" src="/images/feedback_dbcontext.PNG" /></p>
-<h3 id="_1">配置数据库连接</h3>
-<p><code>appsetting.json</code> 中配置模块连接字符串</p>
-<p><img alt="feedback_conn" src="/images/feedback_connstr.PNG" /></p>
-<h3 id="_2">编译</h3>
-<p>编译 <code>WBBvNext.Feedback.DataAccess</code></p>
-<p>将如下 Model 和 DataAccess 放入 <code>WBBvNext</code> 可执行程序路径下的 <code>WBBPlugs</code> 下的 <code>Feedback</code> 目录下</p>
-<p>如下：</p>
-<p><img alt="feedback_model_dll" src="/images/feedback_model_dll.PNG" /></p>
-<h3 id="_3">代码生成</h3>
-<p>运行 <code>WBBvNext</code></p>
-<p>点击右上角代码生成器</p>
-<p><img alt="codegen" src="/images/gen_code.PNG" /></p>
-<p>模块配置</p>
+                <h1 id="createmodule">CreateModule</h1>
+<ol>
+<li>编译 <code>WBB</code> 模块，置于 <code>WBBPlugs</code> 目录下</li>
+</ol>
+<p><img alt="插件目录" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/wbb_dll.PNG" /></p>
+<ol>
+<li>
+<p>设置 <code>WBBvNext</code> 为启用项，运行项目</p>
+</li>
+<li>
+<p>配置插件参数，生成插件结构</p>
+</li>
+</ol>
+<p><img alt="插件配置" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/wbb_module.PNG" /></p>
 <ul>
-<li>PlugName： 名称保持和模块生成时候输入的名称一致，如Feedback</li>
-<li>选择模型：下拉列表选择与该模块相关对象，如Suggestion</li>
-<li>Area：建议在PlugName前加下划线，如_Feedback</li>
-<li>模块名称：</li>
+<li>插件名称：模块简称，后面数据库连接配置参数与之对应</li>
+<li>包含数据库：勾选 <code>包含数据库</code> 表示改模块包含数据库操作，会自动生成数据库相关库</li>
+<li>
+<p>项目路径：自动填充，不需要改动。指的是代码生成路径</p>
+</li>
+<li>
+<p>生成 <code>Feedback</code> 模块代码</p>
+</li>
 </ul>
-<p><img alt="setting" src="/images/codegen_module_setting.PNG" /></p>
-<p><img alt="field" src="/images/codegen_module_field.PNG" /></p>
-<p><img alt="code" src="/images/codegen_module_code.PNG" /></p>
-<p><img alt="cs" src="/images/codegen_module_cs.PNG" /></p>
-<h3 id="_4">定义模块信息</h3>
-<p><img alt="module_info" src="/images/feedback_module_info.PNG" /></p>
+<p><img alt="插件配置" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/wbb_gencode.PNG" /></p>
+<ol>
+<li>将 <code>Feedback</code> 模块代码添加到 <code>WBBvNext</code> 中</li>
+</ol>
+<p><img alt="插件配置" src="https://github.com/guanhh/wbb-vnext-doc/blob/main/images/add_gen_module.PNG" /></p>
+<h3 id="feedback">至此，一个 <code>Feedback</code> 模块的基本结构已经创建完成</h3>
                 
               
               
@@ -764,7 +647,7 @@ public enum QuestionTypeEnum
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../CreateModule/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 创建模块" rel="prev">
+        <a href="../RunProject/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 运行项目" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -773,20 +656,20 @@ public enum QuestionTypeEnum
               <span class="md-footer__direction">
                 上一页
               </span>
-              创建模块
+              运行项目
             </div>
           </div>
         </a>
       
       
         
-        <a href="../RunModule/" class="md-footer__link md-footer__link--next" aria-label="下一页: 运行模块" rel="next">
+        <a href="../EditModule/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编辑模块" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              运行模块
+              编辑模块
             </div>
           </div>
           <div class="md-footer__button md-icon">
