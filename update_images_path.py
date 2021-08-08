@@ -10,7 +10,7 @@ file_type=[".html"]
 
 #替换表（可以用python正则表达式）
 look_up_table=[
-               ["/site/images/","/images/"],
+               ["https://github.com/guanhh/wbb-vnext-doc/blob/main/","https://raw.githubusercontent.com/guanhh/wbb-vnext-doc/main/"],
                ]
 
 def get_filelist(dir,filetype):
